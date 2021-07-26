@@ -1,12 +1,31 @@
 {
   "notesArray": [
     {
-      "id": "",
       "title": "Test Title",
       "text": "Test text"
     },
     {
       "title": "asdf",
+      "text": "asdf",
+      "id": "0"
+    },
+    {
+      "title": "sdfg",
+      "text": "sdfg",
+      "id": "0"
+    },
+    {
+      "title": "whoa dude",
+      "text": "whoa\n",
+      "id": "0"
+    },
+    {
+      "title": "store",
+      "text": "milk",
+      "id": "0"
+    },
+    {
+      "title": "bop",
       "text": "asdf",
       "id": "0"
     }
