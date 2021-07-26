@@ -1,7 +1,0 @@
-DROP TABLE IF EXISTS notes;
-
-CREATE table notes (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-    title VARCHAR(50) NOT NULL, 
-    text_block VARCHAR(1000) NOT NULL
-);

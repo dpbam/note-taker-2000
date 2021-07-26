@@ -27,8 +27,25 @@ router.post('/notes', (req, res) => {
 
 });
 
-router.delete('/api/notes/', (req, res) => {
-    return res.json(notesArray);
+router.delete('/api/notes/:id', (req, res) => {
+    const noteId = JSON.parse(req.params.id)
+    console.log(noteId)
+
+    fs.readFile(__dirname + "db/db.json", (err, notesThings) => {
+        if (err) {
+            return error
+        } 
+        notesThings = JSON.parse(notesThings)
+
+        notesThings = notesThings.filter(val => val.id !== noteId)
+
+        fs.writeFile(__dirname + "/db/db.json", JSON.stringify(notesThings), (err, data) => {
+            if (err) {
+                return error
+            }
+            res.json(notesThings)
+        })
+    });
 });
 
 module.exports = router;
