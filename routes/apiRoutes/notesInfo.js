@@ -12,20 +12,24 @@ router.get('/notes', (req, res) => {
 console.log(notesArray, "notesArray");
 
 router.post('/notes', (req, res) => {
-    const id = saveNote.length.toString();
+    for (let i = 0; i <saveNote.length; i++) {}
+    const id = Date.now();
+    
     const newNote = { title: req.body.title, text: req.body.text, id: id }
+
     // const newNote = { title: "this is a title", text: "this is some text", id: id }
 
     console.log(newNote, "newNote");
     console.log(typeof newNote, "newNoteType");
     notesArray.push(newNote);
 
-    // fs.writeFileSync(
-    //     path.join(__dirname, '../../db/db.json'),
-    //     JSON.stringify({ notesArray: notesArray }, null, 2)
-    // );
+    fs.writeFileSync(
+        path.join(__dirname, '../../db/db.json'),
+        JSON.stringify({ notesArray: notesArray }, null, 2)
+    );
 
-    res.status(newNote, id);
+    // res.status(newNote, id);
+    res.json(true);
 
 });
 
